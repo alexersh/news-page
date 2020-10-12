@@ -1,6 +1,6 @@
-# Build a blog using Nest.js, Vue.js and MongoDB
+# Build a news page using Nest.js, Vue.js and MongoDB
 
-Application repo for a simple news-page application built with Nest.js, Vue.js and MongoDB.
+Application repo for a simple news page application built with Nest.js, Vue.js and MongoDB.
 
 ## Getting Started
 This prototype is divided into two separate sections. Namely the Backend ( Built with Nest.js) and the frontend
@@ -31,7 +31,7 @@ npm install
 ```
 
 ### MongoDB
-Ensure that you have [mongoDB](https://www.mongodb.com/) installed on your machine before running the application. I have this fully setup on my mac already.
+Ensure that you have [mongoDB](https://www.mongodb.com/products/compass) installed on your machine before running the application. I have this fully setup on my mac already.
 
 Start mongoDB:
 
