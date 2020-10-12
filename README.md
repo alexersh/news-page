@@ -15,7 +15,7 @@ git clone https://github.com/alexersh/news-page.git
 
 ## Change directory into the newly cloned project
 ```bash
-cd news-backend
+cd news-page
 ```
 
 ## Backend
