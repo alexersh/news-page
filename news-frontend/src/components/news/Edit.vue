@@ -2,7 +2,7 @@
 <div>
       <h4 class="text-center mt-20">
        <small>
-         <button class="btn btn-success" v-on:click="navigate()"> View All News </button>
+         <button class="btn btn-info" v-on:click="navigate()"> View All News </button>
        </small>
     </h4>
         <div class="col-md-12 form-wrapper">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group col-md-4 pull-right">
-                <button class="btn btn-success" type="submit"> Edit News </button>
+                <button class="btn btn-success" type="submit"><b>Edit News</b></button>
             </div>
           </form>
         </div>

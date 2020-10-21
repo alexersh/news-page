@@ -1,14 +1,19 @@
 <template>
-    <div class="text-center">
-        <div class="col-sm-12">
-      <h4 style="margin-top: 30px;"><small><button class="btn btn-success" v-on:click="navigate()"> View All News </button></small></h4>
-      <hr>
-      <h2>{{ news.title }}</h2>
-      <h4>{{ news.description }}</h4>
-      <h6><span class="glyphicon glyphicon-time"></span> Posted by {{news.author}}, {{news.date_posted}}.</h6>
-      <p> {{ news.body }} </p>
-    </div>
-    </div>
+  <div>
+    <h4 class="text-center" style="margin: 30px 0;"><small><button class="btn btn-info" v-on:click="navigate()"><b>View all news</b></button></small></h4>
+    <div class="card">
+      <h3 class="card-header">
+        {{ news.title }}
+      </h3>
+        <div class="card-body">
+        <h4 class="card-title">{{ news.description }}</h4>
+        <p class="card-text">{{ news.body }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <i>Posted by {{news.author}}, {{news.date_posted}}.</i>
+      </div>
+</div>
+  </div>
 </template>
 <script>
 import { server } from "../../utils/helper";

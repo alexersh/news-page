@@ -1,33 +1,31 @@
 <template>
-    <div>
-
+    <div style="padding: 25px 0;">
       <div class="text-center">
-        <h1>News Page built with NestJS and VueJS</h1>
-       <p> This is my first framework application </p>
-
+        <h2>News Page application built with <b><i style="color: crimson;">NestJS</i></b> and <b><i style="color: chartreuse">VueJS</i></b></h2>
+       <p style="padding-bottom: 20px;"><b><i>This is my <b style="font-size: 1.2rem; color: indianred;">first</b> framework application</i></b></p>
        <div v-if="allNews.length === 0">
-            <h2> No news found at the moment </h2>
+            <h4> No news found at the moment &#128549;</h4>
         </div>
       </div>
-        <div class="row" style="width: 99%;">
+        <div class="row">
            <div class="col-md-4" v-for="news in allNews" :key="news._id">
-              <div class="card mb-4 shadow-sm" style="left: 20px">
+              <div class="card mb-4">
                 <div class="card-body">
                    <h2 class="card-img-top">{{ news.title }}</h2>
-                   <h4 class="card-subtitle mb-2 text-muted">{{ news.description }}</h4>
-                  <p class="card-text">{{ news.body }}</p>
+                   <h5 class="card-subtitle mb-2 text-muted">{{ news.description }}</h5>
+                  <p class="card-text" style="padding-top: 10px; text-overflow: ellipsis; white-space: nowrap; overflow:hidden;">{{ news.body }}</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group" style="margin-bottom: 20px;">
-                      <router-link :to="{name: 'News', params: {id: news._id}}" class="btn btn-sm btn-outline-secondary">View News</router-link>
-                       <router-link :to="{name: 'Edit', params: {id: news._id}}" class="btn btn-sm btn-outline-secondary">Edit News</router-link>
-                       <button class="btn btn-sm btn-outline-secondary" v-on:click="deleteNews(news._id)">Delete News</button>
+                    <div class="btn-group" style="margin: 8px 0;">
+                      <router-link :to="{name: 'News', params: {id: news._id}}" class="btn btn-sm btn-primary"><b>View post</b></router-link>
+                      <router-link :to="{name: 'Edit', params: {id: news._id}}" class="btn btn-sm btn-warning"><b>Edit post</b></router-link>
+                      <button class="btn btn-sm btn-danger" v-on:click="deleteNews(news._id)"><b>Delete post</b></button>
                     </div>
                   </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Posted on: {{ news.date_posted}}</small><br/>
-                    <small class="text-muted">by: {{ news.author}}</small>
                   </div>
-                </div>
+                  <div class="card-footer text-muted">
+                    <small class="text-muted"><b>Posted on: {{ news.date_posted}}</b></small><br/>
+                    <small class="text-muted"><b>by: {{ news.author}}</b></small>
+                  </div>
               </div>
             </div>
       </div>
@@ -58,7 +56,7 @@ export default {
         console.log(data);
         window.location.reload();
       });
-    }
+    },
   }
 };
 </script>
