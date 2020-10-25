@@ -4,8 +4,8 @@
     <div id="nav">
       <router-link to="/home"> Home </router-link> | 
       <router-link to="/create"> Create </router-link>
-      <i class="fas fa-sun icon-sun" v-if="nightMode" @click="nightMode = !nightMode"></i>
-      <i class="fas fa-moon icon-moon" v-else @click="nightMode = !nightMode"></i>
+      <i v-if="nightMode" @click="nightMode = !nightMode"><b-icon class="sun" icon="brightness-high"></b-icon></i>
+      <i v-else @click="nightMode = !nightMode"><b-icon class="moon" icon="moon "></b-icon></i>
     </div>
     <router-view/>
     </div>
@@ -13,6 +13,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin, ModalPlugin } from 'bootstrap-vue'
+Vue.use(ModalPlugin)
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
   export default {
     data: () => {
       return {
@@ -31,7 +36,8 @@
 </script>
 
 <style lang="scss">
-  @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+  $modal-backdrop-opacity : 0.8;
+  @import "bootstrap-vue/src/components/modal/index.scss";
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;  
     font-size: 1rem;
@@ -55,15 +61,14 @@
         color: #42b983;
         }
         i {
-          position: absolute;
-          padding: 4px 7px;
+          position: relative;
           font-size: 1.6rem;
           cursor: pointer;
         }
-        .icon-sun {
+        .sun {
           color: #FCDA5F;
         }
-        .icon-moon {
+        .moon {
           color: #041B37;
         }
       }
